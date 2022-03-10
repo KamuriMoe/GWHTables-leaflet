@@ -1,0 +1,45 @@
+.attributetable {
+    background-color: white;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 201;
+    width:320px;
+    height:100px;
+}
+.attributetable td{
+    border-color: black;
+    border-style: double;
+}
+
+.tablemove {
+    cursor: move;
+    height: 20px;
+
+}
+
+#vname > td:last-child, #values > td:last-child {
+    height: 40px;
+    width: 70px;
+}
+
+.input {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    border: none;
+    text-align: center
+}
+
+tbody button {
+    padding: 0;
+    margin: 0;
+    height: 30px;
+    width: 60px;
+}
+tbody select {
+    padding: 0;
+    margin: 0;
+    height: 20px;
+    width: 60px;
+}

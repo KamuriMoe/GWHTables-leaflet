@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地理数据与概念模型</title>
+
+    <script src="libs/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="libs/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="plugin/StyleEditor/css/Leaflet.StyleEditor.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css"/>
+    <link rel="stylesheet" href="plugin/echarts/css/base.css">
+    <link rel="stylesheet" href="libs/css/Files.css">
+    <link rel="stylesheet" href="libs/css/GWHydraulics.css">
+
+    <script src="libs/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="plugin/StyleEditor/js/Leaflet.StyleEditor.min.js"></script>
+    <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
+
+
+</head>
+<body>
+<div class="data_content">
+
+
+    <div class="data_main">
+        <div class="main_left fl">
+            <div class="left_1 t_btn6" style="cursor: pointer;">
+                <div class="main_title">
+                    <img src="plugin/echarts/img/t_1.png" alt="">
+                    功能区
+                </div>
+                <div id="chart_1" class="chart" style="width:100%;height: 280px;"></div>
+            </div>
+            <div class="left_2" style="cursor: pointer;">
+                <div class="main_title">
+                    <img src="plugin/echarts/img/t_2.png" alt="">
+                    图层区
+                </div>
+                <div class="wrapper">
+                    <div class="aiui">
+                        <div class="ai-treenav">
+                            <ul>
+                                <li>
+                                    <ul class="nav-trunk">
+                                        <li type="radio" onclick="mission=1"><a class="item-name c-f"><i></i><span
+                                                class="pull-left"><div class="checkbox c-selected"><input
+                                                type="checkbox"></div></span><span
+                                                class="pull-left filename">观测数据</span></a>
+
+                                            <ul class="nav-trunk fold ">
+                                                <ul id="luoyue1" style="margin-left: 0px">
+
+                                                </ul>
+                                                <a><i onclick="groupcreate('')"></i></a>
+                                            </ul>
+                                        </li>
+
+                                        <li type="radio" onclick="mission=2"><a class="item-name c-f"><i></i><span
+                                                class="pull-left"><div class="checkbox"><input
+                                                type="checkbox"></div></span><span
+                                                class="pull-left filename">概念模型</span></a>
+                                            <ul class="nav-trunk fold " id="luoyue2">
+                                                <li>
+                                                    <a class="item-name c-f">
+                                                        <i></i>
+                                                        <span class="pull-left">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox">
+                                                            </div>
+                                                        </span>
+                                                        <span class="pull-left filename">二级目录名称</span>
+                                                    </a>
+                                                    <ul class="nav-trunk fold">
+                                                        <li>
+                                                            <a class="item-name  item-name-last c-f"><i></i>
+                                                                <span class="pull-left">
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox">
+                                                                    </div>
+                                                                </span>
+                                                                <span class="pull-left filename">三级目录名称</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="chart_2" class="chart t_btn9" style="width:100%;height: 280px;"></div>
+            </div>
+        </div>
+        <div class="main_center fl">
+            <div class="center_text">
+                <!--左上边框-->
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <!--右上边框-->
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <!--左下边框-->
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                <!--右下边框-->
+                <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    绘图区
+                </div>
+                <div id="map"></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src="plugin/echarts/js/common.js"></script>
+<script src="plugin/echarts/js/echarts.min.js"></script>
+<script src="plugin/echarts/js/dataTool.js"></script>
+<link rel="stylesheet" href="libs/css/index.css">
+<script src="libs/js/index.js"></script>
+<script src="libs/js/GWHydraulics.js"></script>
+</body>
+
+</html>
