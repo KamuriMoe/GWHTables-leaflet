@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <title>地理数据与概念模型</title>
 
-    <script src="libs/js/jquery.min.js"></script>
+
     <link rel="stylesheet" href="libs/bootstrap-3.4.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
     <link rel="stylesheet" href="plugin/StyleEditor/css/Leaflet.StyleEditor.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css"/>
     <link rel="stylesheet" href="plugin/echarts/css/base.css">
     <link rel="stylesheet" href="libs/css/Files.css">
-    <link rel="stylesheet" href="libs/css/GWHydraulics.css">
+    <link rel="stylesheet" href="libs/css/tables.css">
+    <link rel="stylesheet" href="libs/jquery-ui-1.13.1.custom/jquery-ui.min.css">
 
+    <script src="libs/js/jquery.min.js"></script>
+    <script src="libs/jquery-ui-1.13.1.custom/jquery-ui.min.js"></script>
+    <script src="libs/js/nestedSortable.js"></script>
     <script src="libs/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="plugin/StyleEditor/js/Leaflet.StyleEditor.min.js"></script>
@@ -61,29 +65,30 @@
                                                 class="pull-left"><div class="checkbox"><input
                                                 type="checkbox"></div></span><span
                                                 class="pull-left filename">概念模型</span></a>
-                                            <ul class="nav-trunk fold " id="luoyue2">
+                                            <ul class="nav-trunk fold " id='luoyue2'>
                                                 <li>
-                                                    <a class="item-name c-f">
+                                                    <a class="item-name c-f" onclick="triDmoudle()">
                                                         <i></i>
                                                         <span class="pull-left">
                                                             <div class="checkbox">
                                                                 <input type="checkbox">
                                                             </div>
                                                         </span>
-                                                        <span class="pull-left filename">二级目录名称</span>
+                                                        <span class="pull-left filename">3d模型</span>
+
                                                     </a>
-                                                    <ul class="nav-trunk fold">
-                                                        <li>
-                                                            <a class="item-name  item-name-last c-f"><i></i>
-                                                                <span class="pull-left">
-                                                                    <div class="checkbox">
-                                                                        <input type="checkbox">
-                                                                    </div>
-                                                                </span>
-                                                                <span class="pull-left filename">三级目录名称</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+<!--                                                    <ul class="nav-trunk fold">-->
+    <!--                                                    <li>-->
+        <!--                                                    <a class="item-name  item-name-last c-f"><i></i>-->
+            <!--                                                    <span class="pull-left">-->
+                <!--                                                    <div class="checkbox">-->
+                    <!--                                                    <input type="checkbox">-->
+                        <!--                                            </div>-->
+                            <!--                                    </span>-->
+                                <!--                                <span class="pull-left filename">三级目录名称</span>-->
+                                    <!--                        </a>-->
+                                        <!--                </li>-->
+                                            <!--        </ul>-->
                                                 </li>
                                             </ul>
                                         </li>
@@ -128,6 +133,7 @@
     </div>
 
 </div>
+<div id="dialog"></div>
 <script src="plugin/echarts/js/common.js"></script>
 <script src="plugin/echarts/js/echarts.min.js"></script>
 <script src="plugin/echarts/js/dataTool.js"></script>

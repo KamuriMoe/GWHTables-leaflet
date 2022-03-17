@@ -1,29 +1,3 @@
-// var map;
-//     function initMap(){
-//         map = L.map('map', {
-//         crs: L.CRS.EPSG3857,
-//         center: [28.71814, 115.8256],
-//         minZoom: 1,
-//         maxZoom: 18,
-//         zoom: 16,
-//     });
-//         addBaseLayer();
-//     }
-//
-//     function addBaseLayer(){
-//         var option = {
-//             maxZoom: 17,
-//             minZoom: 1,
-//             subdomains: ['0', '1', '2', '3', '4', '5', '6', '7'],
-//             attribution:
-//                 "<a target='_blank' href='https://www.tianditu.gov.cn/'>天地图</a> ",
-//
-//         }
-//         L.tileLayer('https://t{s}.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=天地图key', option).addTo(map);
-//         L.tileLayer('https://t{s}.tianditu.gov.cn/cva_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cva&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=天地图key', option).addTo(map);
-//
-//     }
-// initMap()
 var map = L.map('map', {
     //参考坐标系
     crs: L.CRS.EPSG3857,
@@ -70,10 +44,7 @@ map.addLayer(gaodevec);
 //添加图层组控件
 L.control.layers(baseLayers).addTo(map);
 var styleEditor = L.control.styleEditor({
-    position: "topleft",
-    useGrouping: false,
-    openOnLeafletDraw: true,
-
+    useGrouping: false
 });
 map.addControl(styleEditor);
 map.pm.addControls({
@@ -84,4 +55,99 @@ map.pm.addControls({
     splitMode: true,
     deleteLayer: false,
 });
-map.pm.setLang("zh");
+map.pm.setLang('zh');
+// map.on('pm:create', e => {
+//     console.log(e);
+//     if (e.shape === 'Polygon' || e.shape === 'Line') {
+//         var layer = e.layer;
+//         var ll = layer._latlngs[0];
+//         var lll = e.shape === 'Polygon' ? ll.length : ll.length - 1
+//         var mainmap = layer._map;
+//         //line
+//         for (var i = 0; i < lll; i++) {
+//             var line = new L.Polyline([ll[i], ll[(i + 1) % ll.length]]).addTo(map);
+//
+//             line._path.onmouseover = function () {
+//                 mainmap.dragging.disable();
+//                 mainmap.doubleClickZoom.disable();
+//             };
+//             line._path.onmouseout = function () {
+//                 mainmap.dragging.enable();
+//                 mainmap.doubleClickZoom.enable();
+//             };
+//             line._path.dblclick = function () {
+//
+//             };
+//         }
+//         //polygon
+//
+//
+//     }
+// });
+
+// map.on('click',e=>{
+//     unselect()
+// })
+// // function unselect() {
+// //     // $('path').attr('stroke', '#3388ff');
+// //     // $('path').filter("[fill-rule]").attr('fill', '#3388ff');
+// // }
+
+function triDmoudle() {
+            $("#dialog").dialog({
+                   autoOpen:false,  //设置对话框打开的方式 不是自动打开
+                   show:"blind",    //打开时的动画效果
+                   hide:"explode",    //关闭是的动画效果
+                   modal:false,          //true代表运用遮罩效果
+    /*             buttons:{        //添加按钮的操作
+                       "确定":function (){
+                                $(this).dialog("close");//关闭对话框
+                           },
+                        "取消":function (){
+                                $(this).dialog("close");
+                            }
+
+                       },
+                       //上边是第一种方式
+
+                       //下边是第二种方式
+                       */
+                    buttons:[
+                        {
+                            text:"Ok",
+                            click:function (){
+                                $(this).dialog("close");//关闭对话框
+                            }
+                        },
+                            {
+                            text:"取消",
+                            click:function (){
+                                $(this).dialog("close");//关闭对话框
+                            }
+                        }],
+                    draggable:true,   //是否可以拖动的效果  true可以拖动  默认值是true    ，false代表不可以拖动
+                    //closeOnEscape:false,   //是否采用esc键退出对话框，如果为false则不采用 ，true则采用
+                    title:"添加用户操作",    //对话框的标题
+                    position:'center' ,         //对话框打开的位置，默认center，有top、left、right、center、bottom
+                    width:600,      //设置对话框的宽度
+                    height:300,     //设置对话框的高度
+                    resizable:true,   //是否可以改变对话框的尺寸的操作，默认true
+                // 层叠效果
+                    drag:function(event,ui){
+                            //可以测试出 对话框当前的坐标位置
+                        },
+                    create: function( event, ui ) {
+                         $("#dialog").parents('[tabindex]').css('z-index','1000')
+                    }
+                });
+            //触发连接的事件   当你点击 连接  打开一个对话框
+                $("#dialog").dialog("open");  //open参数  作用  打开对话框
+
+            //我怎么获取 我设置的options中的参数值
+            //var modalValue = $("#luoyue2").find('.filename').dialog("option","modal");
+            //window.console.log(modalValue);
+
+            //我怎么设置options中的参数值
+            //$("#luoyue2").find('.filename').dialog("option","modal",false);
+}
+
