@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b7ca5a2-5aa8-4ef7-88af-a58ba9d497bb" name="默认更改列表" comment="remake" />
+    <list default="true" id="1b7ca5a2-5aa8-4ef7-88af-a58ba9d497bb" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +178,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647531503375</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="remake">
+      <created>1647531540188</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1647531540188</updated>
+    </task>
+    <task id="LOCAL-00008" summary="202203172341">
+      <created>1647531661205</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1647531661205</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,10 +200,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add ui" />
-    <MESSAGE value="remake" />
     <MESSAGE value="ico" />
     <MESSAGE value="md" />
-    <option name="LAST_COMMIT_MESSAGE" value="md" />
+    <MESSAGE value="remake" />
+    <MESSAGE value="202203172341" />
+    <option name="LAST_COMMIT_MESSAGE" value="202203172341" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="66" key="#Closure_Linter" timestamp="1646955254889">
@@ -229,14 +247,14 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="499" y="187" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1536.816@0.0.1536.816" timestamp="1646955112216" />
-    <state x="379" y="2" key="CommitChangelistDialog2" timestamp="1647531618142">
+    <state x="379" y="2" key="CommitChangelistDialog2" timestamp="1647531953823">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="379" y="2" key="CommitChangelistDialog2/0.0.1536.816@0.0.1536.816" timestamp="1647531618142" />
-    <state x="162" y="67" key="DiffContextDialog" timestamp="1647531520942">
+    <state x="379" y="2" key="CommitChangelistDialog2/0.0.1536.816@0.0.1536.816" timestamp="1647531953823" />
+    <state x="162" y="67" key="DiffContextDialog" timestamp="1647531945049">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="162" y="67" key="DiffContextDialog/0.0.1536.816@0.0.1536.816" timestamp="1647531520942" />
+    <state x="162" y="67" key="DiffContextDialog/0.0.1536.816@0.0.1536.816" timestamp="1647531945049" />
     <state x="556" y="161" key="FileChooserDialogImpl" timestamp="1647509979500">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -301,14 +319,18 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state width="1493" height="258" key="GridCell.Tab.2.right/0.0.1536.816@0.0.1536.816" timestamp="1647516852144" />
+    <state x="547" y="119" key="RollbackChangesDialog" timestamp="1647531947316">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="547" y="119" key="RollbackChangesDialog/0.0.1536.816@0.0.1536.816" timestamp="1647531947316" />
     <state x="278" y="62" key="SettingsEditor" timestamp="1646915665983">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="278" y="62" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1646915665983" />
-    <state x="194" y="128" width="814" height="658" key="Vcs.Push.Dialog.v2" timestamp="1647531574878">
+    <state x="194" y="128" width="814" height="658" key="Vcs.Push.Dialog.v2" timestamp="1647531692591">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="194" y="128" width="814" height="658" key="Vcs.Push.Dialog.v2/0.0.1536.816@0.0.1536.816" timestamp="1647531574878" />
+    <state x="194" y="128" width="814" height="658" key="Vcs.Push.Dialog.v2/0.0.1536.816@0.0.1536.816" timestamp="1647531692591" />
     <state x="467" y="232" key="com.intellij.ide.util.TipDialog" timestamp="1647479256880">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
