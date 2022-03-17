@@ -93,44 +93,32 @@ map.pm.setLang('zh');
 // //     // $('path').filter("[fill-rule]").attr('fill', '#3388ff');
 // // }
 
-function triDmoudle() {
+function show3d() {
             $("#dialog").dialog({
                    autoOpen:false,  //设置对话框打开的方式 不是自动打开
                    show:"blind",    //打开时的动画效果
-                   hide:"explode",    //关闭是的动画效果
+                   hide:"blind",    //关闭是的动画效果
                    modal:false,          //true代表运用遮罩效果
-    /*             buttons:{        //添加按钮的操作
-                       "确定":function (){
-                                $(this).dialog("close");//关闭对话框
-                           },
-                        "取消":function (){
-                                $(this).dialog("close");
-                            }
-
-                       },
-                       //上边是第一种方式
-
-                       //下边是第二种方式
-                       */
-                    buttons:[
-                        {
-                            text:"Ok",
-                            click:function (){
-                                $(this).dialog("close");//关闭对话框
-                            }
-                        },
-                            {
-                            text:"取消",
-                            click:function (){
-                                $(this).dialog("close");//关闭对话框
-                            }
-                        }],
+//buttons:{"确定":function (){$(this).dialog("close");},"取消":function (){$(this).dialog("close");}},
+//                     buttons:[
+//                         {
+//                             text:"Ok",
+//                             click:function (){
+//                                 $(this).dialog("close");//关闭对话框
+//                             }
+//                         },
+//                             {
+//                             text:"取消",
+//                             click:function (){
+//                                 $(this).dialog("close");//关闭对话框
+//                             }
+//                         }],
                     draggable:true,   //是否可以拖动的效果  true可以拖动  默认值是true    ，false代表不可以拖动
                     //closeOnEscape:false,   //是否采用esc键退出对话框，如果为false则不采用 ，true则采用
-                    title:"添加用户操作",    //对话框的标题
-                    position:'center' ,         //对话框打开的位置，默认center，有top、left、right、center、bottom
-                    width:600,      //设置对话框的宽度
-                    height:300,     //设置对话框的高度
+                    title:"3d模型展示",    //对话框的标题
+                    position:{my:'center',at:'center',of:window} ,         //对话框打开的位置，默认center，有top、left、right、center、bottom
+                    width:700,      //设置对话框的宽度
+                    height:500,     //设置对话框的高度
                     resizable:true,   //是否可以改变对话框的尺寸的操作，默认true
                 // 层叠效果
                     drag:function(event,ui){

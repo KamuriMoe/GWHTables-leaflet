@@ -139,9 +139,16 @@ html, body, #map {
     width: 20%;
 }
 
-.data_content .data_main .main_left > div {
+.data_content .data_main .main_left > .left_1 {
     width: 100%;
-    height: 280px;
+    height: 120px;
+    box-sizing: border-box;
+    border: 1px solid #2C58A6;
+    position: relative;
+    box-shadow: 0 0 10px #2C58A6;
+}.data_content .data_main .main_left >.left_2 {
+    width: 100%;
+    height: 480px;
     box-sizing: border-box;
     border: 1px solid #2C58A6;
     position: relative;

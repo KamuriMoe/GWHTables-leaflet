@@ -5,7 +5,7 @@
     <title>地理数据与概念模型</title>
 
 
-    <link rel="stylesheet" href="libs/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <!--    <link rel="stylesheet" href="libs/bootstrap-3.4.1-dist/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
     <link rel="stylesheet" href="plugin/StyleEditor/css/Leaflet.StyleEditor.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css"/>
@@ -13,14 +13,6 @@
     <link rel="stylesheet" href="libs/css/Files.css">
     <link rel="stylesheet" href="libs/css/tables.css">
     <link rel="stylesheet" href="libs/jquery-ui-1.13.1.custom/jquery-ui.min.css">
-
-    <script src="libs/js/jquery.min.js"></script>
-    <script src="libs/jquery-ui-1.13.1.custom/jquery-ui.min.js"></script>
-    <script src="libs/js/nestedSortable.js"></script>
-    <script src="libs/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="plugin/StyleEditor/js/Leaflet.StyleEditor.min.js"></script>
-    <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
 
 
 </head>
@@ -42,63 +34,37 @@
                     <img src="plugin/echarts/img/t_2.png" alt="">
                     图层区
                 </div>
-                <div class="wrapper">
-                    <div class="aiui">
-                        <div class="ai-treenav">
-                            <ul>
-                                <li>
-                                    <ul class="nav-trunk">
-                                        <li type="radio" onclick="mission=1"><a class="item-name c-f"><i></i><span
-                                                class="pull-left"><div class="checkbox c-selected"><input
-                                                type="checkbox"></div></span><span
-                                                class="pull-left filename">观测数据</span></a>
+                <div id="files">
+                    <ol class="sortable">
 
-                                            <ul class="nav-trunk fold ">
-                                                <ul id="luoyue1" style="margin-left: 0px">
+                        <li id="1" class="file">
+                            <div><span class="disclose"><span></span></span>概念模型</div>
+                            <ol>
+                                <li id="2" class="sub">
+                                    <div><span class="disclose"><span></span></span>项目1</div>
+                                    <ol>
+                                        <li id="3" class="tri">
+                                            <div><span class="disclose"><span></span></span>图层1</div>
 
-                                                </ul>
-                                                <a><i onclick="groupcreate('')"></i></a>
-                                            </ul>
                                         </li>
-
-                                        <li type="radio" onclick="mission=2"><a class="item-name c-f"><i></i><span
-                                                class="pull-left"><div class="checkbox"><input
-                                                type="checkbox"></div></span><span
-                                                class="pull-left filename">概念模型</span></a>
-                                            <ul class="nav-trunk fold " id='luoyue2'>
-                                                <li>
-                                                    <a class="item-name c-f" onclick="triDmoudle()">
-                                                        <i></i>
-                                                        <span class="pull-left">
-                                                            <div class="checkbox">
-                                                                <input type="checkbox">
-                                                            </div>
-                                                        </span>
-                                                        <span class="pull-left filename">3d模型</span>
-
-                                                    </a>
-<!--                                                    <ul class="nav-trunk fold">-->
-    <!--                                                    <li>-->
-        <!--                                                    <a class="item-name  item-name-last c-f"><i></i>-->
-            <!--                                                    <span class="pull-left">-->
-                <!--                                                    <div class="checkbox">-->
-                    <!--                                                    <input type="checkbox">-->
-                        <!--                                            </div>-->
-                            <!--                                    </span>-->
-                                <!--                                <span class="pull-left filename">三级目录名称</span>-->
-                                    <!--                        </a>-->
-                                        <!--                </li>-->
-                                            <!--        </ul>-->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    </ol>
                                 </li>
-                            </ul>
-                        </div>
-                    </div>
+                            </ol>
+                        </li>
+
+                        <li id="4" class="file">
+                            <div><span class="disclose"><span></span></span>三维地质模型</div>
+                            <ol>
+                                <li id="show3d" class="sub">
+                                    <div><span class="disclose"><span></span></span>3d模型</div>
+                                </li>
+                            </ol>
+                        </li>
+
+                    </ol>
                 </div>
-                <div id="chart_2" class="chart t_btn9" style="width:100%;height: 280px;"></div>
+                <div id="chart_2" class="chart t_btn9" style="width:100%;height: 280px;">
+                </div>
             </div>
         </div>
         <div class="main_center fl">
@@ -133,13 +99,27 @@
     </div>
 
 </div>
-<div id="dialog"></div>
+<div id="dialog" title="3d模型">
+<h2>模型容器</h2>
+</div>
 <script src="plugin/echarts/js/common.js"></script>
 <script src="plugin/echarts/js/echarts.min.js"></script>
 <script src="plugin/echarts/js/dataTool.js"></script>
+
+<script src="libs/js/jquery.min.js"></script>
+<script src="libs/jquery-ui-1.13.1.custom/jquery-ui.min.js"></script>
+<script src="libs/js/nestedSortable.js"></script>
+<!--    <script src="libs/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>-->
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="plugin/StyleEditor/js/Leaflet.StyleEditor.min.js"></script>
+<script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
+
 <link rel="stylesheet" href="libs/css/index.css">
 <script src="libs/js/index.js"></script>
+<script src="libs/js/Files.js"></script>
 <script src="libs/js/GWHydraulics.js"></script>
+
 </body>
 
 </html>
