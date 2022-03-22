@@ -43,7 +43,7 @@ function MountainLoad(id) {
         renderer = new THREE.WebGLRenderer();
 
         // document.body.appendChild(renderer.domElement);
-        var dom = document.getElementById(id)
+        var dom =$(id)[0]
         dom.appendChild(renderer.domElement);
         renderer.setSize(dom.clientWidth, dom.clientHeight);
 

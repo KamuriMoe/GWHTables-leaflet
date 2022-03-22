@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="libs/css/Files.css">
+    <link rel="stylesheet" href="libs/jquery-ui-1.13.1.custom/jquery-ui.min.css">
+
+</head>
+
+<body>
+
+<div id="files">
+    <ol class="sortable">
+        <li id="list_1" class="file">
+            <div><span class="disclose"><span></span></span>概念模型</div>
+            <ol>
+                <li class="sub">
+                    <div><span class="disclose"><span></span></span>项目1</div>
+                    <ol>
+                        <li class="tri">
+                            <div><span class="disclose"><span></span></span>图层1</div>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+    </ol>
+    <ol class="sortable">
+        <li id="list_2" class="file">
+            <div><span class="disclose"><span></span></span>三维地质模型</div>
+            <ol>
+                <li id="show3d" class="sub">
+                    <div><span class="disclose"><span></span></span>3d模型</div>
+                </li>
+            </ol>
+        </li>
+    </ol>
+</div>
+
+<div id="3d"></div>
+
+<script src="libs/js/jquery.min.js"></script>
+<script src="libs/jquery-ui-1.13.1.custom/jquery-ui.min.js"></script>
+<script src="libs/js/nestedSortable.js"></script>
+<script src="libs/js/Files.js"></script>
+
+<!--3d模型-->
+<script src="plugin/ModelLoad/three/build/three.js"></script>
+<script src="plugin/ModelLoad/three/examples/js/controls/OrbitControls.js"></script>
+<script src="plugin/ModelLoad/ModelLoad.js"></script>
+</body>
+
+</html>

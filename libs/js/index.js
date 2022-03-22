@@ -1,4 +1,44 @@
-var numsimulation= (function () {
+
+class Tables {
+    constructor(id) {
+        $('body').append('<div id="' + id + '"></div>')
+        this.main = $('#' + id);
+        this.init()
+    }
+
+    init() {
+        this.main.dialog({
+            autoOpen: false,  //设置对话框打开的方式 不是自动打开
+            show: 'blind',    //打开时的动画效果
+            hide: 'blind',    //关闭是的动画效果
+            modal: false,          //true代表运用遮罩效果
+            buttons: {
+                '修改': function () {
+                }
+            },
+            draggable: true,   //是否可以拖动的效果  true可以拖动  默认值是true    ，false代表不可以拖动
+            //closeOnEscape:false,   //是否采用esc键退出对话框，如果为false则不采用 ，true则采用
+            title: '属性值增添与编辑',    //对话框的标题
+            position: {my: 'center', at: 'center', of: window},         //对话框打开的位置，默认center，有top、left、right、center、bottom
+            width: 1000,      //设置对话框的宽度
+            height: 600,     //设置对话框的高度
+            resizable: true,   //是否可以改变对话框的尺寸的操作，默认true
+            create: function (event, ui) {
+                console.log(event, ui)
+                $(event.target).parents('[tabindex]').css('z-index', '1000');
+            }
+        });
+    }
+
+    showmain() {
+        this.main.dialog("open");
+    }
+}
+
+
+
+//
+var numsimulation = (function () {
     var map = L.map('map', {
         //参考坐标系
         crs: L.CRS.EPSG3857,
@@ -43,7 +83,8 @@ var numsimulation= (function () {
     };
 //初始时加载矢量图层组
     map.addLayer(gaodevec);
-
+//属性表格实例化
+    var tables = new Tables('Table')
 //扩展 线特征属性
     L.Polyline.include({
         Tables: {
@@ -55,7 +96,7 @@ var numsimulation= (function () {
             for (var i = 0; i < lll; i++) {
                 var lines = new L.Polyline([ll[i], ll[(i + 1) % lll]]).addTo(map);
                 lines._path.setAttribute('stroke-width', '6')
-                //lines._disableMapEvent()
+                lines._disableMapEvent()
             }
         },
         _disableMapEvent: function () {
@@ -82,8 +123,14 @@ var numsimulation= (function () {
                 $(e.target._path).not('[stroke-dasharray]').attr('stroke', '#e74c3c');
             })
         },
+        _tableShow:function () {
+            this.on('dblclick', e => {
+                tables.showmain()
+            });
+        },
         _GWH: function () {
             this._selected();
+            this._tableShow();
             //if(this.pm._shape) {console.log(this);this._drawBoundary()};
         }
     });
@@ -100,8 +147,10 @@ var numsimulation= (function () {
                 e.target._path.setAttribute('fill', '#e74c3c');
             })
         },
+
         _GWHPolygon: function () {
             this._selectedPolygon();
+            this._tableShow();
             this._drawBoundary();
         }
     });
@@ -123,96 +172,16 @@ var numsimulation= (function () {
         deleteLayer: false,
     });
     map.pm.setLang('zh');
+
     map.on('pm:create', e => {
         e.layer._disableMapEvent()
         console.log(e)
-        e.layer._path.ondblclick=function () {
-            var tables = new Tables('Table').showmain()
-        }
+        // e.layer._path.ondblclick = function () {
+        //     tables.showmain()
+        // }
     });
     //文件夹
 
 
-
 })();
-class Tables {
-    constructor(id) {
-        $('body').append('<div id="' + id + '"></div>')
-        this.main = $('#' + id);
-        this.init()
-    }
-    init() {
-        this.main.dialog({
-            autoOpen: false,  //设置对话框打开的方式 不是自动打开
-            show: 'blind',    //打开时的动画效果
-            hide: 'blind',    //关闭是的动画效果
-            modal: false,          //true代表运用遮罩效果
-            buttons: {
-                '修改': function () {
-                }
-            },
-            draggable: true,   //是否可以拖动的效果  true可以拖动  默认值是true    ，false代表不可以拖动
-            //closeOnEscape:false,   //是否采用esc键退出对话框，如果为false则不采用 ，true则采用
-            title: '属性值增添与编辑',    //对话框的标题
-            position: {my: 'center', at: 'center', of: window},         //对话框打开的位置，默认center，有top、left、right、center、bottom
-            width: 1000,      //设置对话框的宽度
-            height: 600,     //设置对话框的高度
-            resizable: true,   //是否可以改变对话框的尺寸的操作，默认true
-            create: function (event, ui) {
-                console.log(event, ui)
-                $(event.target).parents('[tabindex]').css('z-index', '1000');
-            }
-        });
-    }
-    showmain() {
-        this.main.dialog("open");
-    }
-}
-
-
-function show3d() {
-    $("#dialog").dialog({
-        autoOpen: false,  //设置对话框打开的方式 不是自动打开
-        show: "blind",    //打开时的动画效果
-        hide: "blind",    //关闭是的动画效果
-        modal: false,          //true代表运用遮罩效果
-//buttons:{"确定":function (){$(this).dialog("close");},"取消":function (){$(this).dialog("close");}},
-//                     buttons:[
-//                         {
-//                             text:"Ok",
-//                             click:function (){
-//                                 $(this).dialog("close");//关闭对话框
-//                             }
-//                         },
-//                             {
-//                             text:"取消",
-//                             click:function (){
-//                                 $(this).dialog("close");//关闭对话框
-//                             }
-//                         }],
-        draggable: true,   //是否可以拖动的效果  true可以拖动  默认值是true    ，false代表不可以拖动
-        //closeOnEscape:false,   //是否采用esc键退出对话框，如果为false则不采用 ，true则采用
-        title: "3d模型展示",    //对话框的标题
-        position: {my: 'center', at: 'center', of: window},         //对话框打开的位置，默认center，有top、left、right、center、bottom
-        width: 1000,      //设置对话框的宽度
-        height: 600,     //设置对话框的高度
-        resizable: true,   //是否可以改变对话框的尺寸的操作，默认true
-        // 层叠效果
-        drag: function (event, ui) {
-            //可以测试出 对话框当前的坐标位置
-        },
-        create: function (event, ui) {
-            console.log(event, ui)
-            $(event.target).parents('[tabindex]').css('z-index', '1000');
-        }
-    });
-    //触发连接的事件   当你点击 连接  打开一个对话框
-    $("#dialog").dialog("open");  //open参数  作用  打开对话框
-    MountainLoad('dialog')
-    //我怎么获取 我设置的options中的参数值
-    //var modalValue = $("#luoyue2").find('.filename').dialog("option","modal");
-    //window.console.log(modalValue);
-    //我怎么设置options中的参数值
-    //$("#luoyue2").find('.filename').dialog("option","modal",false);
-}
 
