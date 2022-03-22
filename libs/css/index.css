@@ -157,6 +157,7 @@ html, body, #map {
 }
 
 .data_content .data_main .main_left div.left_1 {
+        margin-bottom: 20%;
     /*background: url("../img/chart_1.png") no-repeat center;*/
 }
 
@@ -165,7 +166,7 @@ html, body, #map {
 }
 
 .data_content .data_main .main_left div:nth-child(1) {
-    margin-bottom: 20%;
+
 }
 
 .data_content .data_main .main_left div .main_title {
@@ -511,7 +512,9 @@ html, body, #map {
     background-color: #072951;
     box-shadow: -10px 0px 15px #2C58A6 inset, /*左边阴影*/ 10px 0px 15px #2C58A6 inset; /*右边阴影*/
 }
-
+.t_btn6, .t_btn9 {
+    margin-top: 10%;
+}
 .t_btn8, .t_btn2, .t_btn3 {
     position: relative;
     z-index: 100;

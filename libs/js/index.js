@@ -73,6 +73,8 @@ var numsimulation = (function () {
         //当前显示等级
         zoom: 16,
     });
+    map._onResize();
+
 //地图图层
 //天地图矢量图层
 
