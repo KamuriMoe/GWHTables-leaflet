@@ -1,11 +1,19 @@
-
 class Tables {
-    constructor(id) {
-        $('body').append('<div id="' + id + '"></div>')
-        this.main = $('#' + id);
-        this.init()
-    }
+    Attrs={
 
+    };
+    constructor(id) {
+        this.eleattrs = this.Attrs
+        this.tabl = '<table class="attributetable" id="table_" cellspacing="10" align="center"><tbody><tr id="vname" align="center"><td>名称</td><td><button onclick="">隐藏</button></td></tr><tr id="values" align="center" ><td></td><td><button onclick="">修改</button></td></tr></tbody>'
+    this.tabl += '<tbody id="ats" hidden="hidden"><tr align="center" style="height: 20px"><td colspan="10">属性编辑</td></tr><tr align="center"><td class="_colspan">对象类型</td><td><select><option value="well">井</option><option value="area">区域</option><option value="boundary">边界</option></select></td></tr><tr><td colspan="10"><form id="atsc"></form></td></tr></tbody></table>'
+        $('body').append('<div id="' + id + '"><div id="tabs"><ul><li><a href="#tabs-1">展示页</a></li><li><a href="#tabs-2">修改页</a></li></ul><div id="tabs-1">'+this.tabl+'</div><div id="tabs-2"></div></div></div>')
+
+        //$('#'+id+'>div').css({'border':'dashed 3px black','height':'100%','width':'45%','float':'left'})
+        this.main = $('#' + id);
+        this.tabs = $('#tabs');
+        this.tabs.css('height','-webkit-fill-available')
+        this.init();
+    }
     init() {
         this.main.dialog({
             autoOpen: false,  //设置对话框打开的方式 不是自动打开
@@ -29,15 +37,29 @@ class Tables {
             }
         });
     }
-
     showmain() {
         this.main.dialog("open");
+        this.tabs.tabs({})
     }
+    setAttrs(name){
+
+    }
+    getAttrs(){
+        return this.eleattrs
+    }
+
+}
+//属性输入输出
+
+function save() {
+
+}
+function read() {
+
 }
 
 
-
-//
+//init
 var numsimulation = (function () {
     var map = L.map('map', {
         //参考坐标系
@@ -87,12 +109,12 @@ var numsimulation = (function () {
     var tables = new Tables('Table')
 //扩展 线特征属性
     L.Polyline.include({
-        Tables: {
-            type: 'Polyline',
+        tables: {
+            shape: 'Polyline',
         },
         _drawBoundary: function () {
             var ll = this._latlngs[0];
-            var lll = this.Tables.type === 'Polygon' ? ll.length : ll.length - 1
+            var lll = this.tables.shape === 'Polygon' ? ll.length : ll.length - 1
             for (var i = 0; i < lll; i++) {
                 var lines = new L.Polyline([ll[i], ll[(i + 1) % lll]]).addTo(map);
                 lines._path.setAttribute('stroke-width', '6')
@@ -107,7 +129,7 @@ var numsimulation = (function () {
                 map.doubleClickZoom.enable();
             };
 
-            if (this.Tables.type === 'Polygon') {
+            if (this.tables.shape === 'Polygon') {
                 this._path.setAttribute('stroke-opacity', 0.0);
                 this._path.setAttribute('stroke-width', '0')
             }
@@ -138,8 +160,8 @@ var numsimulation = (function () {
 
 //扩展 多边形特征属性
     L.Polygon.include({
-        Tables: {
-            type: 'Polygon'
+        tables: {
+            shape: 'Polygon'
         },
         _selectedPolygon: function () {
             this.on('click', e => {
@@ -182,6 +204,6 @@ var numsimulation = (function () {
     });
     //文件夹
 
-
+return [map,tables.Attrs]
 })();
 

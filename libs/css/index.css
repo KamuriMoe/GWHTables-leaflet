@@ -13,9 +13,9 @@ html, body, #map {
 
 .data_content {
     /*overflow-x: hidden;*/
-    min-width: 1366px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+
+    padding-top: 3%;
+
 }
 
 .data_content .data_time {
@@ -130,25 +130,26 @@ html, body, #map {
 
 .data_content .data_main {
     width: calc(100% - 40px);
-    margin-bottom: 40px;
-    height: 615px;
+    margin-bottom: 5%;
+    height: -webkit-fill-available;
     margin-left: 20px;
 }
 
 .data_content .data_main .main_left {
-    width: 20%;
+    width: 15%;
+    height: 100%;
 }
 
 .data_content .data_main .main_left > .left_1 {
     width: 100%;
-    height: 120px;
+    height: 15%;
     box-sizing: border-box;
     border: 1px solid #2C58A6;
     position: relative;
     box-shadow: 0 0 10px #2C58A6;
 }.data_content .data_main .main_left >.left_2 {
     width: 100%;
-    height: 480px;
+    height: 80%;
     box-sizing: border-box;
     border: 1px solid #2C58A6;
     position: relative;
@@ -164,7 +165,7 @@ html, body, #map {
 }
 
 .data_content .data_main .main_left div:nth-child(1) {
-    margin-bottom: 50px;
+    margin-bottom: 20%;
 }
 
 .data_content .data_main .main_left div .main_title {
@@ -193,14 +194,15 @@ html, body, #map {
 
 
 .data_content .data_main .main_center {
-    width: 80%;
-    height: 800px;
+    width: 85%;
+    height: 100%;
 
 }
 
+
 .data_content .data_main .main_center .center_text {
     width: calc(100% - 50px);
-    height: 650px;
+    height: 100%;
     margin-left: 25px;
     margin-right: 25px;
     box-sizing: border-box;

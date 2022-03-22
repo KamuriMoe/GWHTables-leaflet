@@ -32,6 +32,7 @@ function show3d(selector) {
 }
 
 $(function () {
+
     $("ol.sortable").nestedSortable({
         forcePlaceholderSize: true,
         handle: "div",
@@ -48,20 +49,18 @@ $(function () {
         expandOnHover: 700,
         startCollapsed: false,
         isAllowed: function (placeholder, placeholderParent, currentItem) {
-
-                switch (currentItem[0].classList[0]) {
-                    case 'file':
-                        return placeholderParent ? false : true
-                        break;
-                    case 'sub':
-                        if (placeholderParent && placeholderParent[0].classList[0] === 'file') return true
-                        else return false
-                        break;
-                    case 'tri':
-                        if (placeholderParent && placeholderParent[0].classList[0] === 'sub') return true
-                        else return false
-                        break;
-
+            switch (currentItem[0].classList[0]) {
+                case 'file':
+                    return placeholderParent ? false : true
+                    break;
+                case 'sub':
+                    if (placeholderParent && placeholderParent[0].classList[0] === 'file') return true
+                    else return false
+                    break;
+                case 'tri':
+                    if (placeholderParent && placeholderParent[0].classList[0] === 'sub') return true
+                    else return false
+                    break;
             }
         }
     });
@@ -73,6 +72,16 @@ $(function () {
     $('#show3d').on('click', function (e) {
         show3d('#3d');
         e.preventDefault();
+    });
+    var map = numsimulation[0]
+    var attrs = numsimulation[1]
+    console.log(map)
+    map.on('pm:create', e => {
+        $('#list_1').find('.sub > ol').append('<li class="tri"><div><span class="disclose"><span></span></span>图层1</div></li>')
+    });
+    $('#createProject').click(function () {
+
+        $('#list_1 > ol').append('<li id="' + 'test' + '" class="sub"><div><span class="disclose"><span></span></span>项目</div><ol></ol></li>')
     })
 });
 
