@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     $("ol.sortable").nestedSortable({
         forcePlaceholderSize: true,
         handle: "div",
